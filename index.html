@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="./css/header.css">
+   <link rel="stylesheet" href="./css/main.css">
+   <link rel="stylesheet" href="./css/null.css">
+   <link rel="stylesheet" href="./css/normalize.css">
+   <title>ToDo list</title>
+</head>
+<body>
+   <header class="header">
+      <div class="header__container">
+         <h1 class="header__title">ToDo List</h1>
+         <div class="header__registration">
+            <a href="#" class="header__rigistr"><img src="img/registration.svg" alt="icon registration"></a>
+         </div>
+      </div>
+   </header>
+   <main class="main">
+      <div class="main__container">
+         <div class="main__block">
+            <div class="main__content-header header-block">
+               <div class="header-block__items">
+                  <input placeholder="Сделать удаление завершенных и всех" class="header-block__inpt" type="text">
+                  <button type="button" class="header-block__btn btn-list">Добавить</button>
+               </div>
+            </div>
+            <div class="main__content-main">
+               <div class="main__items check">
+               <!-- checkbox -->
+               <label for="check__choice" class="check">
+               <input id="check__choice" class="check__input" type="checkbox">
+               <span class="check__box"></span>
+               <span class="check__notes">Checked</span>  
+               </label>
+               <!-- checkbox -->
+               </div>
+               <div class="main__item-del">
+                  ❌
+               </div>
+            </div>
+            <div class="main__content-footer footer-block">
+               <div class="footer-block__items">
+                  <button type="button" class="footer-block__delete-complete btn-list">Удалить завершенные</button>
+                  <button type="button" class="footer-block__delete-all btn-list">Удалить все</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </main>
+   <script src="./script.js/style.js"></script>
+</body>
+</html>

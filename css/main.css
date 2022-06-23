@@ -1,0 +1,111 @@
+.main {
+}
+
+.main__container {
+   background: #fff;
+   border-radius: 16px;
+   box-shadow: 0px 8px 35px rgba(0, 0, 0, 0.16);
+}
+
+.main__block {
+}
+
+.main__content-header {
+}
+
+.header-block {
+   border-bottom: 1px solid #CED4DA;
+}
+
+.header-block__items {
+   padding: 24px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.header-block__inpt {
+   width: 356px;
+   padding: 9px 32px 8px 14px;
+   background: #FFFFFF;
+   border: 1px solid #CED4DA;
+   border-radius: 4px;
+   color: #54595E;
+}
+
+.header-block__btn {
+   background: #272829;
+   padding: 8px 16px;
+}
+.header-block__btn:hover{
+   background: #000000;
+}
+.main__content-main {
+   display: flex;
+   justify-content: space-between;
+   padding: 24px;
+}
+
+.main__items {
+}
+
+.check__input {
+   margin-right: 16px;
+}
+
+.check__box {
+   margin-left: -2em;
+   margin-top: 0.15em;
+   position: absolute;
+   width: 0.6em;
+   height: 0.6em;
+   border-radius: 0.05em;
+   background-color: #fff;
+   box-shadow: 0 0 0 0.1em #4a90e2;
+}
+/*Checked*/
+.check__input:checked + .check__box {
+   background-color: #4a90e2;
+}
+/*focus*/
+.check__input:focus + .check__box {
+   box-shadow: 
+   0 0 0 0.1em #4a90e2
+   0 0 0 0.2em #7ed321;
+}
+.main__item-del {
+}
+.main__content-footer {
+   background: #F5F5F5;
+
+}
+.footer-block {
+   padding: 18px 24px;
+   border-radius:  0 0 16px 16px;
+}
+.footer-block__items {
+   display: flex;
+   justify-content: space-between;
+}
+.footer-block__delete-complete {
+   background: #6C757D;
+}
+.footer-block__delete-complete:hover{
+   background: #51585e;
+}
+.footer-block__delete-all {
+   background: #DC3545;
+}
+.footer-block__delete-all:hover{
+   background: #a82835;
+}
+/*----общие стили для button-------*/
+.btn-list{
+   font-weight: 600;
+   font-size: 16px;
+   line-height: 1.18;
+   text-align: center;
+   color: #FFFFFF;
+   border-radius: 4px;
+   padding: 10px 16px;
+   cursor: pointer;
+}

@@ -46,8 +46,13 @@
 }
 
 .main__items {
+   display: flex;
+   flex-direction: column;
 }
-
+.check__choice{
+   display: inline-block;
+   margin-bottom: 15px;
+}
 .check__input {
    margin-right: 16px;
 }

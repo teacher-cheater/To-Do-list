@@ -8,20 +8,23 @@ const buttonAddTask = document.querySelector('.header-block__btn')
 //переменная для введенных значений в input
 const input = document.querySelector('input');
 
-//
-//'http://24api.ru/rest-todo'
-
 //переменная для добавления задач в div
 const addCheckbox = document.querySelector('main__content-main')
 
 //div с checkbox для добавления
 const items = document.querySelector('.main__items')
 
-//переменная для обращения к "удаление Х"
-const deleteTask = document.querySelector('.main__item-del')
+//переменная для обращения к "удаление завершенных"
+const btnDelTaskComplete = document.querySelector('.footer-block__delete-complete')
 
-//
+//переменная для обращения к "удалить всё"
+const btnDeleteAllTask = document.querySelector('.footer-block__delete-all')
+
+//получение с сервера task'ов
 const getTask = 'http://24api.ru/rest-todo/items-by-id?id=132'
+//const getTask = 'http://24api.ru/rest-todo'
+
+
 function getData() {
    fetch(getTask, {
       method: 'GET',
@@ -33,8 +36,7 @@ function getData() {
          let out = ''
          for (let k in data) {
             out = data[k]
-            console.log(data[k].name)
-            showTask(data[k].id, data[k].name, data[k].isDone)
+            showTask(out.id, out.name, out.isDone)
          }
       })
 }
@@ -55,50 +57,78 @@ function addTask() {
       body: JSON.stringify(dataTask)
    })
       .then((answerTask) => answerTask.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+         showTask(data.id, data.name, data.isDone)
+      })
 }
 buttonAddTask.addEventListener('click', addTask)//нужна функция, которая будет добавлять событие из функции)
 
+//функция для отрисовки задач
 function showTask(idTask, nameTask, isDoneTask) {
-   let label = document.createElement('label') //label для содержимого
-   label.setAttribute('for', "check__choice_" + idTask)
-   label.classList = "check__choice"
-   items.append(label) //добавлен в блок 'main__item-del'
+   //блок для checkbox'ов
+   let checkBoxContent = document.createElement('div')
+   checkBoxContent.classList = 'check__box-content'
+
+   let textP = document.createElement('p') //paragraph для содержимого
+   //textP.setAttribute('for', "check__choice_" + idTask)
+   textP.classList = "check__choice"
+   items.append(textP) //добавлен в блок 'main__item-del'
+
    let checkbox = document.createElement('input') // checkbox для выбора задач
    checkbox.setAttribute('type', 'checkbox')
    checkbox.id = "check__choice_" + idTask;
    checkbox.classList = "check__input"
-   label.append(checkbox) //добавлен в label
-   let span = document.createElement('span') // span для кастомного checkbox'a
-   span.className = 'check__box';
-   span.setAttribute('class', 'check__box')
-   label.append(span) //добавлен в label
-   let spanText = document.createElement('span') //введенные задачи
-   spanText.classList = "check__notes"
-   spanText.innerText = nameTask //вывод из input.value
-   label.append(spanText)
+   textP.append(checkbox) //добавлен в label
+
+   textP.innerText = nameTask;
+   checkBoxContent.append(checkbox);
+
    let div = document.createElement('div') //блок для картинки 'X'
    div.classList = 'main__item-del'
    div.dataset.id = idTask // создали аттрибут(понимать, какую запись мы удаляем)
-   items.append(div) //добавлен в блок 'main__item-del'
-
+   div.textContent = '❌'
+   items.append(checkBoxContent) //добавлен в блок 'main__item-del'
+   checkBoxContent.append(textP)
+   checkBoxContent.append(div)
    if (isDoneTask === 1) {
       checkbox.checked = true
    }
    else {
       checkbox.checked = false
    }
-
+   div.addEventListener('click', (event) => delData(event.target))//передали целый элемент (Х)
 
 }
-showTask()
+
+//переменная для удаления
+const delTask = 'http://24api.ru/rest-todo/';
+//функция для удаления task'ов
+function delData(targets) {
+   //console.log(targets)
+   id = targets.attributes[1].nodeValue //получили ID-шник, который хранится в записи.
+   fetch(delTask + id, {
+      method: 'DELETE',
+   }).then(() => {
+      targets.parentElement.remove() // удаляем div 
+   })
+   //console.log(id)
+}
+
+//
+const deleteAll = 'http://24api.ru/rest-todo/'
+//функция "удалить всё"
+function delAllTasks(elem) {
+   let tasksDiv = document.querySelectorAll('.main__item-del')
+   for (let k of tasksDiv) {
+      //console.log([k][0].attributes[1].nodeValue)
+      fetch(deleteAll + [k][0].attributes[1].nodeValue, {
+         method: 'DELETE',
+      }).then(() => {
+         k.parentElement.remove()
+      })
+   }
+}
+btnDeleteAllTask.addEventListener('click', delAllTasks)
 
 
-//функция для получения синхронности
-//async function toDoList() {
-//   let response = await fetch(creatingATask, {
-//      method: '',
 
-//   })
-//нужно дождаться, чтобы задачи ждали загрузки json file
-//}

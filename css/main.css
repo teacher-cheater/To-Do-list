@@ -40,25 +40,29 @@
    background: #000000;
 }
 .main__content-main {
-   display: flex;
-   justify-content: space-between;
    padding: 24px;
 }
 
 .main__items {
-   display: flex;
-   flex-direction: column;
 }
 .check__choice{
-   display: inline-block;
-   margin-bottom: 15px;
+   overflow: hidden;
+   padding: 0 25px 0 0;
 }
 .check__input {
-   margin-right: 16px;
 }
 
+/* container with label and div */
+.check__box-content{
+   position: relative;
+   display: flex;
+   gap: 14px;
+   margin-bottom: 15px;
+}
+/* ----- */
+
 .check__box {
-   margin-left: -2em;
+   margin-left: -1.7em;
    margin-top: 0.15em;
    position: absolute;
    width: 0.6em;
@@ -77,7 +81,15 @@
    0 0 0 0.1em #4a90e2
    0 0 0 0.2em #7ed321;
 }
+
+.check__notes {
+
+}
 .main__item-del {
+   position: absolute;
+   top: 0;
+   right: 0;
+   cursor: pointer;
 }
 .main__content-footer {
    background: #F5F5F5;

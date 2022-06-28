@@ -45,10 +45,17 @@
 
 .main__items {
 }
+
+/* стили для параграфа (р) */
 .check__choice{
    overflow: hidden;
    padding: 0 25px 0 0;
+   cursor: pointer;
+   /*text-decoration-line: line-through;
+   color: #54595E;
+   opacity: 0.5;*/
 }
+/* ----------------- */
 .check__input {
 }
 
@@ -72,15 +79,16 @@
    box-shadow: 0 0 0 0.1em #4a90e2;
 }
 /*Checked*/
-.check__input:checked + .check__box {
-   background-color: #4a90e2;
+.active{
+   text-decoration-line: line-through;
+   color: #54595E;
+   opacity: 0.5;
 }
+/*.none-active{
+   color: #000000;
+}*/
 /*focus*/
-.check__input:focus + .check__box {
-   box-shadow: 
-   0 0 0 0.1em #4a90e2
-   0 0 0 0.2em #7ed321;
-}
+
 
 .check__notes {
 

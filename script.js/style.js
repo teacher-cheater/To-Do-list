@@ -24,6 +24,8 @@ const btnDeleteAllTask = document.querySelector('.footer-block__delete-all')
 const getTask = 'http://24api.ru/rest-todo/items-by-id?id=132'
 //const getTask = 'http://24api.ru/rest-todo'
 
+//получить все параграфы (p)
+const allParag = document.querySelectorAll('p');
 
 function getData() {
    fetch(getTask, {
@@ -96,8 +98,18 @@ function showTask(idTask, nameTask, isDoneTask) {
    else {
       checkbox.checked = false
    }
-   div.addEventListener('click', (event) => delData(event.target))//передали целый элемент (Х)
+   div.addEventListener('click', (event) => delData(event.target)) //передали целый элемент (Х)
 
+   /*----*/
+   checkbox.addEventListener('click', (event) => addDel(event))//событие для checkbox (checked)
+
+   /*------функция для добавления класса active в checkbox----------*/
+   const addDel = () => checkbox.click ? textP.classList.toggle('active') : '.check__choice'
+
+   //нужно кликать по параграфу (р), чтобы отмечать checkbox(checked)
+   //textP.addEventListener('click', (event) => { console.log('hi') })
+   //textP.addEventListener('click', (event) => checkOrNot(event))
+   //const checkOrNot = () => textP.click ? (textP.classList.toggle('active') + checkbox.checked) : '.check__choice'
 }
 
 //переменная для удаления
@@ -129,6 +141,12 @@ function delAllTasks(elem) {
    }
 }
 btnDeleteAllTask.addEventListener('click', delAllTasks)
+
+//при нажатии на р нужно отметить checkbox
+//allParag.classList.toggle('.active')
+//allParag.style.textDecoration = "line-through"
+
+//allParag.addEventListener('click', 
 
 
 

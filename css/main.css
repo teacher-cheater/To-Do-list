@@ -54,6 +54,7 @@
 }
 /* ----------------- */
 .check__input {
+   cursor: pointer;
 }
 
 /* container with label and div */
@@ -66,14 +67,6 @@
 /* ----- */
 
 .check__box {
-   margin-left: -1.7em;
-   margin-top: 0.15em;
-   position: absolute;
-   width: 0.6em;
-   height: 0.6em;
-   border-radius: 0.05em;
-   background-color: #fff;
-   box-shadow: 0 0 0 0.1em #4a90e2;
 }
 
 /*Checked*/

@@ -51,9 +51,6 @@
    overflow: hidden;
    padding: 0 25px 0 0;
    cursor: pointer;
-   /*text-decoration-line: line-through;
-   color: #54595E;
-   opacity: 0.5;*/
 }
 /* ----------------- */
 .check__input {
@@ -78,16 +75,14 @@
    background-color: #fff;
    box-shadow: 0 0 0 0.1em #4a90e2;
 }
+
 /*Checked*/
 .active{
    text-decoration-line: line-through;
    color: #54595E;
    opacity: 0.5;
 }
-/*.none-active{
-   color: #000000;
-}*/
-/*focus*/
+
 
 
 .check__notes {

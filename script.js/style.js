@@ -71,8 +71,11 @@ function showTask(idTask, nameTask, isDoneTask) {
    let checkBoxContent = document.createElement('div')
    checkBoxContent.classList = 'check__box-content'
 
-   let textP = document.createElement('p') //paragraph для содержимого
-   //textP.setAttribute('for', "check__choice_" + idTask)
+   //let textP = document.createElement('p') //paragraph для содержимого
+   /*----------label--------*/
+   let textP = document.createElement('label') //paragraph для содержимого
+
+   textP.setAttribute('for', "check__choice_" + idTask)
    textP.classList = "check__choice"
    items.append(textP) //добавлен в блок 'main__item-del'
 
@@ -101,15 +104,30 @@ function showTask(idTask, nameTask, isDoneTask) {
    div.addEventListener('click', (event) => delData(event.target)) //передали целый элемент (Х)
 
    /*----*/
-   checkbox.addEventListener('click', (event) => addDel(event))//событие для checkbox (checked)
+   //checkbox.addEventListener('click', (event) => addDel(event))//событие для checkbox (checked)
 
    /*------функция для добавления класса active в checkbox----------*/
-   const addDel = () => checkbox.click ? textP.classList.toggle('active') : '.check__choice'
+   //const addDel = () => checkbox.click ? textP.classList.toggle('active') : '.check__choice'
 
    //нужно кликать по параграфу (р), чтобы отмечать checkbox(checked)
    //textP.addEventListener('click', (event) => { console.log('hi') })
    //textP.addEventListener('click', (event) => checkOrNot(event))
    //const checkOrNot = () => textP.click ? (textP.classList.toggle('active') + checkbox.checked) : '.check__choice'
+   function checkAddDel() {
+
+      textP.classList.toggle('active')
+      console.log(checkbox.checked);
+      //if (checkbox.checked === true) {
+      //   console.log(123);
+      //   checkbox.checked = false
+      //} else {
+      //   checkbox.checked = true
+      //   console.log(1232);
+      //}
+      //checkbox.checked !== checkbox.checked
+   }
+   //textP.addEventListener('click', (event) => checkAddDel(event))
+   checkbox.addEventListener('click', (event) => checkAddDel(event))
 }
 
 //переменная для удаления

@@ -21,6 +21,13 @@
    padding: 24px;
    display: flex;
    justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 10px;
+}
+@media (max-width: 539.98px) {
+   .header-block__items {
+      /*padding: 18px;*/
+   }
 }
 
 .header-block__inpt {
@@ -30,6 +37,10 @@
    border: 1px solid #CED4DA;
    border-radius: 4px;
    color: #54595E;
+}
+@media (max-width: 539.98px) {
+   .header-block__inpt {
+   }
 }
 
 .header-block__btn {

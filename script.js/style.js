@@ -69,7 +69,6 @@ function showTask(idTask, nameTask, isDoneTask) {
    let checkBoxContent = document.createElement('div')
    checkBoxContent.classList = 'check__box-content'
 
-   //let textP = document.createElement('p') //paragraph для содержимого
    /*----------label--------*/
    let textP = document.createElement('label') //paragraph для содержимого
 
@@ -79,12 +78,12 @@ function showTask(idTask, nameTask, isDoneTask) {
 
    let checkbox = document.createElement('input') // checkbox для выбора задач
    checkbox.setAttribute('type', 'checkbox')
-   checkbox.id = "check__choice_" + idTask;
+   checkbox.id = "check__choice_" + idTask
    checkbox.classList = "check__input"
    textP.append(checkbox) //добавлен в label
 
-   textP.innerText = nameTask;
-   checkBoxContent.append(checkbox);
+   textP.innerText = nameTask
+   checkBoxContent.append(checkbox)
 
    let div = document.createElement('div') //блок для картинки 'X'
    div.classList = 'main__item-del'
@@ -101,71 +100,74 @@ function showTask(idTask, nameTask, isDoneTask) {
    }
    div.addEventListener('click', (event) => delData(event.target)) //передали целый элемент (Х)
 
-   /*------функция для добавления класса active в checkbox----------*/
-   //нужно кликать по параграфу (р), чтобы отмечать checkbox(checked)
+   ///*------функция для добавления класса active в checkbox----------*/
    const checkAddDel = () => textP.classList.toggle('active')
-   //const addDel = () => checkbox.click ? textP.classList.toggle('active') : '.check__choice'
-   //checkbox.addEventListener('click', (event) => addDel(event))//событие для checkbox (checked)
-   //textP.addEventListener('click', (event) => { console.log('hi') })
-   //textP.addEventListener('click', (event) => checkOrNot(event))
-   //const checkOrNot = () => textP.click ? (textP.classList.toggle('active') + checkbox.checked) : '.check__choice'
-   //console.log(checkbox.checked);
-   //if (checkbox.checked === true) {
-   //   console.log(123);
-   //   checkbox.checked = false
-   //} else {
-   //   checkbox.checked = true
-   //   console.log(1232);
-   //}
-   //checkbox.checked !== checkbox.checked
-   //textP.addEventListener('click', (event) => checkAddDel(event))
    checkbox.addEventListener('click', (event) => checkAddDel(event))
 
-   /*------- фукнция для удаления завершенных задач---------*/
+   ///*------- удалениe завершенных задач---------*/
    btnDelTaskComplete.addEventListener('click', sortOut)
-
 }
 
-
+///*------------функция для обращения к ID элементам--------------*/
 function sortOut() {
-   let a = document.querySelectorAll('.check__box-content')
-   //console.log(a)
-   for (let k of a) {
-      //console.log(k.childNodes[2])
-      let sort = k.childNodes[2];
-      console.log(sort)
+   let elements = document.querySelectorAll('.check__box-content')
+   let array = []
+   for (let k of elements) {
+      if (k.childNodes[0].checked == true) {
+         let sort = k.childNodes[2]
+         let sortSplit = sort.dataset.id
+         array.push(sortSplit)
+      }
+   }
+   postDelId(array).then(() => { //вставленный .then, т.к функция postDelId волзвращает promise
+      for (let k of elements) { //на сервере они уже удалились, а здесь мы их скрываем
+         if (k.childNodes[0].checked == true) {
+            k.remove()
+         }
+      }
+   })
+}
+
+///*-------функция для отправки запроса на сервер. Удаление по ID--------*/
+function postDelId(arr) {
+   return fetch('http://24api.ru/rest-todo/delete-items', {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+         'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ "items": arr })//сформировали объект с массивом как в документации
+   }) //перенесли .then в фукнцию 
+
+}
+///*------------- функция для перебора и фильтрации input----------------*/
+function delAllTasks() {
+   let tasksDiv = document.querySelectorAll('.main__item-del')
+   for (let k of tasksDiv) {
+      fetch(deleteAll + [k][0].attributes[1].nodeValue, {
+         method: 'DELETE',
+      }).then(() => {
+         k.parentElement.remove()
+      })
    }
 }
 
-
-//'http://24api.ru/rest-todo/delete-items' link
-// • навесить события на кнопку
-// • найти выделенные элементы (перебрать)
-// • удалить по клику
-
-
-//переменная для удаления
-const delTask = 'http://24api.ru/rest-todo/';
-//функция для удаления task'ов
+///*------функция для удаления task'ов-----*/
 function delData(targets) {
-   //console.log(targets)
    id = targets.attributes[1].nodeValue //получили ID-шник, который хранится в записи.
-   fetch(delTask + id, {
+   fetch('http://24api.ru/rest-todo/' + id, {
       method: 'DELETE',
    }).then(() => {
       targets.parentElement.remove() // удаляем div 
    })
-   //console.log(id)
-}
+}//вынести в отдельный файл
 
-//
-const deleteAll = 'http://24api.ru/rest-todo/'
-//функция "удалить всё"
-function delAllTasks(elem) {
+
+///*----------функция "удалить всё"-------*/
+function delAllTasks() {
    let tasksDiv = document.querySelectorAll('.main__item-del')
    for (let k of tasksDiv) {
-      //console.log([k][0].attributes[1].nodeValue)
-      fetch(deleteAll + [k][0].attributes[1].nodeValue, {
+      fetch('http://24api.ru/rest-todo/' + [k][0].attributes[1].nodeValue, {
          method: 'DELETE',
       }).then(() => {
          k.parentElement.remove()
@@ -174,11 +176,6 @@ function delAllTasks(elem) {
 }
 btnDeleteAllTask.addEventListener('click', delAllTasks)
 
-//при нажатии на р нужно отметить checkbox
-//allParag.classList.toggle('.active')
-//allParag.style.textDecoration = "line-through"
-
-//allParag.addEventListener('click', 
 
 
 

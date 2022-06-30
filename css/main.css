@@ -1,16 +1,11 @@
 .main {
+   padding: 20px 0 30px;
 }
 
 .main__container {
    background: #fff;
    border-radius: 16px;
    box-shadow: 0px 8px 35px rgba(0, 0, 0, 0.16);
-}
-
-.main__block {
-}
-
-.main__content-header {
 }
 
 .header-block {
@@ -32,11 +27,6 @@
 
 .header-block__inpt {
    width: 356px;
-   padding: 9px 32px 8px 14px;
-   background: #FFFFFF;
-   border: 1px solid #CED4DA;
-   border-radius: 4px;
-   color: #54595E;
 }
 @media (max-width: 539.98px) {
    .header-block__inpt {
@@ -52,9 +42,6 @@
 }
 .main__content-main {
    padding: 24px;
-}
-
-.main__items {
 }
 
 /* стили для параграфа (р) */
@@ -77,9 +64,6 @@
 }
 /* ----- */
 
-.check__box {
-}
-
 /*Checked*/
 .active{
    text-decoration-line: line-through;
@@ -87,11 +71,6 @@
    opacity: 0.5;
 }
 
-
-
-.check__notes {
-
-}
 .main__item-del {
    position: absolute;
    top: 0;
@@ -100,7 +79,6 @@
 }
 .main__content-footer {
    background: #F5F5F5;
-
 }
 .footer-block {
    padding: 18px 24px;
@@ -132,4 +110,12 @@
    border-radius: 4px;
    padding: 10px 16px;
    cursor: pointer;
+}
+/*---------общие стили для input--------*/
+.input-stl{
+   padding: 9px 32px 8px 14px;
+   background: #FFFFFF;
+   border: 1px solid #CED4DA;
+   border-radius: 4px;
+   color: #54595E;
 }

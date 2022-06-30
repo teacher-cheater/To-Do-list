@@ -1,0 +1,89 @@
+
+/* оформление pop-up */
+.registration {
+   position: relative;
+   width:100%;
+   min-height:100%;
+   background-color: rgba(0,0,0,0.5);
+   overflow:hidden;
+   position:fixed;
+   top:0px;
+   z-index: 2;
+}
+
+.pop-up{
+   background-color: #fff;
+   position: absolute;
+   top: 50px;
+   left: 50%;
+   transform: translate(-50%);
+   overflow: auto;
+   border-radius: 10px;
+}
+.reg-on-off { /* скрыть окно авторизации */
+   display: none;
+}
+/* ------------------ */
+
+.registration__wrapper {
+   padding: 30px 20px;
+   display: flex;
+   flex-direction: column;
+   max-width: 530px;
+   margin: 0 auto;
+   border: 1px solid #000;
+}
+
+.registration__title {
+   /*padding: 20px 0;*/
+   font-style: normal;
+   font-weight: 700;
+   font-size: 28px;
+   line-height: 0.82;
+   color: #000000;
+   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   text-align: center;
+   margin-bottom: 45px;
+}
+
+
+.registration__block {
+   text-align: center;
+   gap: 18px;
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 35px;
+}
+.reg {
+}
+.reg__username {
+
+}
+.reg__inpt {
+   padding: 12px 25px;
+   width: 100%;
+   text-transform: capitalize;
+}
+.input-stl {
+}
+.reg__email {
+}
+.reg__fname {
+}
+.reg__sname {
+}
+.reg__patronymic {
+}
+.registration__btn {
+   display: flex;
+   justify-content: space-between;
+}
+.registration__sent {
+   background-color: #000000;
+}
+.btn-list {
+}
+.registration__back {
+   background-color: #000000;
+
+}

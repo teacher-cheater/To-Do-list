@@ -4,7 +4,6 @@ import { showTask } from './draw-task.js'
 import { delData } from './functions.js'
 
 
-
 //TODO/*-----------функция для получения пользователя-----------------------------*/
 
 export function getData() {
@@ -41,7 +40,7 @@ export function addTask() {
    })
       .then((answerTask) => answerTask.json())
       .then((data) => {
-         showTask(data.id, data.name, data.isDone).addEventListener('click', (event) => delData(event.target))
+         showTask(data.id, data.name, data.isDone)
       })
 }
 

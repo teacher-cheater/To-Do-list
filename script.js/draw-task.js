@@ -1,7 +1,7 @@
 
-import { sortOut } from './functions.js'
-import { items, btnDelTaskComplete } from './variables.js'
-import { addTask, delAllTasks } from './fetch-files.js'
+import { sortOut, delData } from './functions.js'
+import { items, btnDelTaskComplete, buttonAddTask } from './variables.js'
+//import { addTask, delAllTasks } from './fetch-files.js'
 
 
 //TODO/*-----------------функция для отрисовки задач---------*/
@@ -41,6 +41,9 @@ export function showTask(idTask, nameTask, isDoneTask) {
    //TODO/*------- удалениe завершенных задач---------*/
    btnDelTaskComplete.addEventListener('click', sortOut)
 
+   //??----------добавление
+   div.addEventListener('click', (event) => delData(event.target))
+   //div.addEventListener('click', (event) => delData(event.target))
    //TODO ----зачеркивание задач----------------------
    const checkAddDel = () => textP.classList.toggle('active')
    checkbox.addEventListener('click', (event) => checkAddDel(event))

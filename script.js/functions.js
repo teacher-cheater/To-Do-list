@@ -1,9 +1,11 @@
 import { postDelId } from './fetch-files.js'
+//import { buttonAddTask } from './variables.js'
+
 
 //TODO/*--------------функция для удаления task'ов-------------------------------*/
 export function delData(targets) {
    let id = targets.attributes[1].nodeValue //получили ID-шник, который хранится в записи.
-   fetch('http://24api.ru/rest-todo/' + id, {
+   fetch('http://24api.ru/rest-todo/' + id, {//???-----нужен ли return
       method: 'DELETE',
    }).then(() => {
       targets.parentElement.remove() // удаляем div 

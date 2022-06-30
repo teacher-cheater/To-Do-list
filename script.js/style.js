@@ -1,36 +1,36 @@
 //импорт переменных const
 import { buttonAddTask, btnDeleteAllTask, input } from './variables.js';
 import { delData } from './functions.js'
+import { addTask, delAllTasks } from './fetch-files.js'
 import { showTask } from './draw-task.js'
 import { getData } from './fetch-files.js'
 /*-------------------------------------*/
 
 /*---------------------------------------------------------------------------------------------*/
 //showTask()
-getData().then(() => {//вызвали функцию.перебрали все элементы и удаляем через функцию(сервер)
-   document.querySelectorAll('.main__item-del').forEach(element => {
-      element.addEventListener('click', (event) => delData(event.target))
-   });
-})
+getData()
+//.then(() => {//вызвали функцию.перебрали все элементы и удаляем через функцию 
+//   document.querySelectorAll('.main__item-del').forEach(element => {
+//      element.addEventListener('click', (event) => delData(event.target))
+//   });
+//})
 
-
-
-//buttonAddTask.onclick = () => 
-//обращение через DOM
-//document.querySelector('.main__item-del').addEventListener('click', (event) => delData(event.target)) //передали целый элемент (Х)
-//document.querySelectorAll('.main__item-del').forEach(element => {
-//   console.log(element)
-//   element.addEventListener('click', (event) => delData(event.target))
-//});
+btnDeleteAllTask.addEventListener('click', delAllTasks)
+buttonAddTask.addEventListener('click', addTask)//нужна функция, которая будет добавлять событие из функции)
 
 //TODO/*---------окно регистрации--------*/
 //section registration
 document.querySelector('.header__rigistr').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))
-//отправка формы с данными
-document.querySelector('.registration__sent').addEventListener('click', () => { console.log('sent') })
+
 //btn to back
 document.querySelector('.registration__back').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))
 
+//TODO----------регистрации--------------------------
+//отправка формы с данными
+//document.querySelector('.registration__sent').addEventListener('click', () => { console.log('sent') })
+//const data ={
+//   username: inputUser.valu
+//}
 
 /*------функция для добавления класса active в checkbox----------*/
 //console.log(document.querySelector('.check__input'))

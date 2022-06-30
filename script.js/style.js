@@ -1,21 +1,20 @@
 //импорт переменных const
 import { buttonAddTask, btnDeleteAllTask, input } from './variables.js';
 import { delData } from './functions.js'
-import { addTask, delAllTasks } from './fetch-files.js'
 import { showTask } from './draw-task.js'
 import { getData } from './fetch-files.js'
 /*-------------------------------------*/
 
 /*---------------------------------------------------------------------------------------------*/
 //showTask()
-getData().then(() => {
+getData().then(() => {//вызвали функцию.перебрали все элементы и удаляем через функцию(сервер)
    document.querySelectorAll('.main__item-del').forEach(element => {
       element.addEventListener('click', (event) => delData(event.target))
    });
-
 })
-btnDeleteAllTask.addEventListener('click', delAllTasks)
-buttonAddTask.addEventListener('click', addTask)//нужна функция, которая будет добавлять событие из функции)
+
+
+
 //buttonAddTask.onclick = () => 
 //обращение через DOM
 //document.querySelector('.main__item-del').addEventListener('click', (event) => delData(event.target)) //передали целый элемент (Х)

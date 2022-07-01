@@ -1,14 +1,13 @@
 //импорт переменных const
-import { buttonAddTask, btnDeleteAllTask, input } from './variables.js';
-import { delData } from './functions.js'
-import { addTask, delAllTasks } from './fetch-files.js'
-import { showTask } from './draw-task.js'
-import { getData } from './fetch-files.js'
+import { buttonAddTask, btnDeleteAllTask } from './variables.js';
+import { addTask, delAllTasks, getData, createUser } from './fetch-files.js'
+
 /*-------------------------------------*/
 
 /*---------------------------------------------------------------------------------------------*/
-//showTask()
 getData()
+//createUser()
+
 //.then(() => {//вызвали функцию.перебрали все элементы и удаляем через функцию 
 //   document.querySelectorAll('.main__item-del').forEach(element => {
 //      element.addEventListener('click', (event) => delData(event.target))
@@ -18,19 +17,38 @@ getData()
 btnDeleteAllTask.addEventListener('click', delAllTasks)
 buttonAddTask.addEventListener('click', addTask)//нужна функция, которая будет добавлять событие из функции)
 
-//TODO/*---------окно регистрации--------*/
+//TODO---------события прослушки показать/скрыть---------------
+btnDeleteAllTask.addEventListener('click', () => document.querySelector('.main__content-main').classList.toggle('main-invisible'))//скрывает блок с задачами main
+btnDeleteAllTask.addEventListener('click', () => document.querySelector('.main__content-footer').classList.toggle('main-invisible'))//скрывает блок с задачами footer
+buttonAddTask.addEventListener('click', () => {
+   document.getElementById('inpt-main').value = "",
+      document.querySelector('.main__content-footer').classList.remove('main-invisible')//показывает блок с задачами main
+}) //очистить input после ввода задач
+
+buttonAddTask.addEventListener('click', () => document.querySelector('.main__content-main').classList.remove('main-invisible'))//показывает блок с задачами footer
+
+//TODO ------ local storage. получение данных. запись ----------
+
+//for (let i = 0; i < localStorage.length; i++) {
+//   let key = localStorage.key(i);
+//   console.log(`${key}: ${localStorage.getItem(key)}`);
+//}
+//console.log(localStorage.getItem(data.id));
+
+//console.log(localStorage.getItem('dataUser'))
+
+//TODO---------окно регистрации---------------------
 //section registration
 document.querySelector('.header__rigistr').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))
 
 //btn to back
 document.querySelector('.registration__back').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))
 
-//TODO----------регистрации--------------------------
+//TODO----------регистрация--------------------------
 //отправка формы с данными
-//document.querySelector('.registration__sent').addEventListener('click', () => { console.log('sent') })
-//const data ={
-//   username: inputUser.valu
-//}
+document.querySelector('.registration__sent').addEventListener('click', () => createUser())
+
+
 
 /*------функция для добавления класса active в checkbox----------*/
 //console.log(document.querySelector('.check__input'))

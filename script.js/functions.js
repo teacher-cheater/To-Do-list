@@ -1,6 +1,4 @@
 import { postDelId } from './fetch-files.js'
-//import { buttonAddTask } from './variables.js'
-
 
 //TODO/*--------------функция для удаления task'ов-------------------------------*/
 export function delData(targets) {
@@ -31,6 +29,4 @@ export function sortOut() {
       }
    })
 }
-
-//TODO----------функция для отправки формы регистрации--------------------------
 

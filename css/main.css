@@ -70,7 +70,10 @@
    color: #54595E;
    opacity: 0.5;
 }
-
+.main-invisible{
+   display: none;
+   
+}
 .main__item-del {
    position: absolute;
    top: 0;

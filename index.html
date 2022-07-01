@@ -16,30 +16,28 @@
    <header class="header">
       <div class="header__container">
          <h1 class="header__title">ToDo List</h1>
-         <!--<div class="header__registration">-->
             <a href="#" class="header__rigistr"><img src="img/registration.svg" alt="icon registration"></a>
-         <!--</div>-->
       </div>
    </header>
    <!--------------- окно авторизации ------------------>
    <section class="registration reg-on-off ">
       <div class="registration__wrapper pop-up">
          <h2 class="registration__title">Регистрация</h2>
-         <form class="registration__block reg">
+         <form name="dataUser" class="registration__block reg">
             <div class="reg__username">
-               <input required name="username" placeholder="username" class="reg__inpt input-stl" type="text">
+               <input required name="username" placeholder="Username" class="reg__inpt input-stl" type="text">
             </div>
             <div class="reg__email">
-               <input required name="email" placeholder="email" class="reg__inpt input-stl" type="text">
+               <input required name="email" placeholder="Email" class="reg__inpt input-stl" type="text">
             </div>
             <div class="reg__fname">
-               <input required name="fname" placeholder="fname" class="reg__inpt input-stl" type="text">
+               <input required name="fname" placeholder="Fname" class="reg__inpt input-stl" type="text">
             </div>
             <div class="reg__sname">
-               <input required name="sname" placeholder="surname" class="reg__inpt input-stl" type="text">
+               <input required name="sname" placeholder="Surname" class="reg__inpt input-stl" type="text">
             </div>
             <div class="reg__password">
-               <input required name="password_hash" placeholder="password" class="reg__inpt input-stl" type="password">
+               <input required name="password_hash" placeholder="Password" class="reg__inpt input-stl" type="password">
             </div>
          </form>
          <div class="registration__btn">
@@ -55,7 +53,7 @@
             <div class="main__content-header header-block">
                <!-- блок: ввести задачу, добавить задачу -->
                <div class="header-block__items">
-                  <input id="inpt-main" placeholder="Введите задачу" class="header-block__inpt input-stl" type="text">
+                  <input id="inpt-main" name="input-name" placeholder="Введите задачу" class="header-block__inpt input-stl" type="text">
                   <button type="button" class="header-block__btn btn-list">Добавить</button>
                </div>
             </div>

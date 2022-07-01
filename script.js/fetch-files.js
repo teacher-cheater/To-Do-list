@@ -1,13 +1,10 @@
 
 import { showTask } from './draw-task.js'
-//import { input } from './variables.js'
-import { delData } from './functions.js'
-
 
 //TODO/*-----------функция для получения пользователя-----------------------------*/
 
 export function getData() {
-   return fetch('http://24api.ru/rest-todo/items-by-id?id=132', {
+   return fetch('http://24api.ru/rest-todo/items-by-id?id=' + localStorage.getItem('dataUser'), {
       method: 'GET',
    })
       .then((resp) => {
@@ -28,7 +25,7 @@ export function addTask() {
    const dataTask = {
       "name": val,
       "isDone": 0,
-      "user_id": 132,
+      "user_id": localStorage.getItem('dataUser'),
    }
    fetch('http://24api.ru/rest-todo', {
       method: "POST",
@@ -66,4 +63,25 @@ export function delAllTasks() {
          k.parentElement.remove()
       })
    }
+}
+
+//TODO----------функция для отправки формы регистрации--------------------------
+export function createUser() {
+   let oldForm = document.forms.dataUser;
+   let formData = new FormData(oldForm);
+   fetch('http://24api.ru/rest-user', {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+         'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+   })
+      .then((answerTask) => answerTask.json())
+      .then((data) => {
+         localStorage.setItem('dataUser', data.id);
+         console.log(
+            formData.get("username")//вывод данных о пользователе
+         );
+      })
 }

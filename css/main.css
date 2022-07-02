@@ -19,18 +19,9 @@
    flex-wrap: wrap;
    gap: 10px;
 }
-@media (max-width: 539.98px) {
-   .header-block__items {
-      /*padding: 18px;*/
-   }
-}
 
 .header-block__inpt {
    width: 356px;
-}
-@media (max-width: 539.98px) {
-   .header-block__inpt {
-   }
 }
 
 .header-block__btn {
@@ -46,6 +37,7 @@
    overflow: hidden;
    padding: 0 25px 0 0;
    cursor: pointer;
+   line-height: 1.4;
 }
 /* ----------------- */
 .check__input {
@@ -85,33 +77,28 @@
 /* --------------------------- */
 .main__item-del {
    position: absolute;
-   top: 0;
+   top: 50%;
    right: 0;
+   transform: translateY(-50%);
    cursor: pointer;
 }
 
-.footer-block {
-
-}
-.footer-invisible{
-   /*display: block;*/
-
-}
 .footer-block__items {
    display: flex;
    justify-content: space-between;
 }
-.footer-block__delete-complete {
-   background: #6C757D;
+.footer-block__delete-complete,
+.footer-block__delete-all{
+   background: #000000;
 }
+
+/* стили при наведении на кнопку */
+.footer-block__delete-all:hover,
 .footer-block__delete-complete:hover{
-   background: #51585e;
-}
-.footer-block__delete-all {
-   background: #DC3545;
-}
-.footer-block__delete-all:hover{
-   background: #a82835;
+   color: #000;
+   background: #fff;
+   border: 1px solid #000;
+   transition: all 0.3s ease 0.1s;
 }
 /*----общие стили для button-------*/
 .btn-list{
@@ -123,6 +110,7 @@
    border-radius: 4px;
    padding: 10px 16px;
    cursor: pointer;
+   border: 1px solid #000;
 }
 /*---------общие стили для input--------*/
 .input-stl{

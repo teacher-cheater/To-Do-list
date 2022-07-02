@@ -23,6 +23,8 @@
 .authorization__text{
    font-size: 18px;
    margin-bottom: 40px;
+   text-align: center;
+   line-height: 1.4;
 
 }
 .authorization__block {

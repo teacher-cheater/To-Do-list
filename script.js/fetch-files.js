@@ -43,7 +43,7 @@ export function addTask() {
 
 //TODO/*-------------функция для отправки запроса на сервер. Удаление по ID------------------*/
 export function postDelId(arr) {
-   return fetch('http://24api.ru/rest-todo/delete-items', {
+   return fetch('http://24api.ru/rest-todo/delete-items', { // return для использования функции в другом файле
       method: 'POST',
       mode: 'cors',
       headers: {

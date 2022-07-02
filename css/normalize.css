@@ -1,9 +1,4 @@
 @charset "UTF-8";
-body {
-  line-height: 1;
-  font-family: 'Inter';
-
-}
 
 .wrapper {
   min-height: 100%;

@@ -27,8 +27,21 @@ buttonAddTask.addEventListener('click', () => {
 }) //очистить input после ввода задач
 
 buttonAddTask.addEventListener('click', () => document.querySelector('.main__content-main').classList.remove('main-invisible'))//показывает блок с задачами footer
-//TODO ------ local storage. получение данных. запись ----------
 
+//TODO ------ прослушивание событий на кнопках авторизации/регистрации ----------
+document.querySelector('.authorization__enter').addEventListener('click', () => { console.log('enter') })//вход
+document.querySelector('.authorization__reg').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))//регистрация
+//TODO---------окно регистрации---------------------
+//section registration
+//document.querySelector('.header__rigistr').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))
+//!!----------------------------------------------
+//document.querySelector('body').classList.toggle('lock')
+//   ('click', () => document.querySelector('.main__content-main').classList.toggle('lock'))
+
+//-------------------------------------------------
+
+
+//TODO ------ local storage. получение данных. запись ----------
 //for (let i = 0; i < localStorage.length; i++) {
 //   let key = localStorage.key(i);
 //   console.log(`${key}: ${localStorage.getItem(key)}`);
@@ -37,9 +50,7 @@ buttonAddTask.addEventListener('click', () => document.querySelector('.main__con
 
 //console.log(localStorage.getItem('dataUser'))
 
-//TODO---------окно регистрации---------------------
-//section registration
-document.querySelector('.header__rigistr').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))
+
 
 //btn to back
 document.querySelector('.registration__back').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))

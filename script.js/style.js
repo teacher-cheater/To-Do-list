@@ -14,6 +14,7 @@ getData()
 //   });
 //})
 
+
 btnDeleteAllTask.addEventListener('click', delAllTasks)
 buttonAddTask.addEventListener('click', addTask)//нужна функция, которая будет добавлять событие из функции)
 
@@ -26,7 +27,6 @@ buttonAddTask.addEventListener('click', () => {
 }) //очистить input после ввода задач
 
 buttonAddTask.addEventListener('click', () => document.querySelector('.main__content-main').classList.remove('main-invisible'))//показывает блок с задачами footer
-
 //TODO ------ local storage. получение данных. запись ----------
 
 //for (let i = 0; i < localStorage.length; i++) {

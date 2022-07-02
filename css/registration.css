@@ -10,7 +10,7 @@
    top:0px;
    z-index: 2;
 }
-
+/* ---общий стиль для pop-up'ов---- */
 .pop-up{
    background-color: #fff;
    position: absolute;
@@ -20,6 +20,7 @@
    overflow: auto;
    border-radius: 10px;
 }
+/* ------------------------------ */
 .reg-on-off { /* скрыть окно авторизации */
    display: none;
 }
@@ -33,8 +34,8 @@
    margin: 0 auto;
    border: 1px solid #000;
 }
-
-.registration__title {
+/* ----общий стиль для всех тайтлов h2 ----*/
+.title {
    /*padding: 20px 0;*/
    font-style: normal;
    font-weight: 700;
@@ -45,7 +46,7 @@
    text-align: center;
    margin-bottom: 45px;
 }
-
+/* -------------------------------------- */
 
 .registration__block {
    text-align: center;

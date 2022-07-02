@@ -1,4 +1,6 @@
-import { postDelId } from './fetch-files.js'
+import { postDelId } from './fetch-files.js';
+import { buttonAddTask, btnDeleteAllTask } from './variables.js';
+
 
 //TODO/*--------------функция для удаления task'ов-------------------------------*/
 export function delData(targets) {
@@ -30,3 +32,20 @@ export function sortOut() {
    })
 }
 
+/*------------*/
+//function addOrDel() {
+//   if (document.querySelector('.main__content-footer').style = 'display: none') {
+//      document.querySelector('.main__content-footer').classList.remove('main-invisible')
+//   }
+//   else {
+//      document.querySelector('.main__content-footer').classList.add()
+//   }
+//   if (document.querySelector('.main__content-main').style = 'display: none') {
+//      document.querySelector('.main__content-main').classList.remove('main-invisible')
+//   }
+//   else {
+//      document.querySelector('.main__content-main').classList.add()
+//   }
+
+//}
+//buttonAddTask.addEventListener('click', addOrDel(document.querySelector('.main__content-main').classList.add('main-invisible')))

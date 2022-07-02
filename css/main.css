@@ -40,9 +40,6 @@
 .header-block__btn:hover{
    background: #000000;
 }
-.main__content-main {
-   padding: 24px;
-}
 
 /* стили для параграфа (р) */
 .check__choice{
@@ -70,22 +67,35 @@
    color: #54595E;
    opacity: 0.5;
 }
+/* блоки, которые отображаются */
 .main-invisible{
    display: none;
-   
 }
+.main__content-footer {
+   background: #F5F5F5;
+   padding: 18px 24px;
+   border-radius:  0 0 16px 16px;
+   /*display: none;*/
+}
+.main__content-main {
+   padding: 18px 24px;
+}
+/* active block */
+
+/* --------------------------- */
 .main__item-del {
    position: absolute;
    top: 0;
    right: 0;
    cursor: pointer;
 }
-.main__content-footer {
-   background: #F5F5F5;
-}
+
 .footer-block {
-   padding: 18px 24px;
-   border-radius:  0 0 16px 16px;
+
+}
+.footer-invisible{
+   /*display: block;*/
+
 }
 .footer-block__items {
    display: flex;

@@ -12,17 +12,25 @@
    <link rel="stylesheet" href="./css/registration.css">
    <link rel="stylesheet" href="./css/authorization.css">
    <link rel="stylesheet" href="./css/media.css">
+   <link rel="stylesheet" href="./css/sign.css">
+   <link rel="stylesheet" href="./css/popup.css">
+
    <title>ToDo list</title>
 </head>
 <body>
    <header class="header">
       <div class="header__container">
          <h1 class="header__title">ToDo List</h1>
-            <a href="#" class="header__rigistr"><img src="img/registration.svg" alt="icon registration"></a>
+         <!-- блок с Login'ом и кнопкой 'выход' -->
+         <div class="header__account">
+            <p id="log" class="header__login"> Name </p>
+            <a href="#" class="header__exit"></a>
+            <!--<a href="#" class="header__rigistr"><img src="img/registration.svg" alt="icon registration"></a>-->
+         </div>
       </div>
    </header>
    <!--------------- окно авторизации ------------------>
-   <section hidden class="authorization ">
+   <section class="authorization">
       <div class="authorization__wrapper pop-up">
          <h2 class="authorization__title title"> Authorization</h2>
          <p class="authorization__text"> Do you have an account?</p>
@@ -32,10 +40,26 @@
          </form>
       </div>
    </section>
+   <!--------------- окно входа в аккаунт ------------------>
+   <section  class="sign-it sgn">
+      <div class="sign-it__wrapper pop-up">
+         <h2 class="sign-it__title title"> Enter your details</h2>
+         <form action="#" name="sign-it" class="sign-it__block">
+            <!--<a href="#" class="sign-it__enter btn-list">Sign it</a>
+            <a href="#" class="sign-it__reg btn-list">Sign up</a>-->
+            <input class="sign-it__log" placeholder="Login" id="login" type="text" name="login">
+            <input class="sign-it__pas" placeholder="Password" id="pswrd" type="password" name="password">
+         </form>
+         <div class="sign-it__items">
+            <a href="#" class="sign-it__enter btn-list">Sign</a>
+            <a href="#" class="sign-it__reg btn-list">Back</a>
+         </div>
+      </div>
+   </section>
    <!--------------- окно регистрации ------------------>
    <section class="registration reg-on-off ">
       <div class="registration__wrapper pop-up">
-         <h2 class="registration__title title">Регистрация</h2>
+         <h2 class="registration__title title">Registration</h2>
          <form action="#" name="dataUser" class="registration__block reg">
             <div class="reg__username">
                <input required name="username" placeholder="Username" class="reg__inpt input-stl" type="text">
@@ -54,8 +78,8 @@
             </div>
          </form>
          <div class="registration__btn">
-            <button type="button" class="registration__sent btn-list">Отправить</button>
-            <a class="registration__back btn-list">Назад</a>
+            <button type="button" class="registration__sent btn-list">Send</button>
+            <a class="registration__back btn-list">Back</a>
          </div>
       </div>
    </section>
@@ -67,7 +91,7 @@
                <!-- блок: ввести задачу, добавить задачу -->
                <div class="header-block__items">
                   <input id="inpt-main" name="input-name" placeholder="Введите задачу" class="header-block__inpt input-stl" type="text">
-                  <button type="button" class="header-block__btn btn-list">Добавить</button>
+                  <button type="button" class="header-block__btn btn-list">Add task</button>
                </div>
             </div>
             <div class="main__content-main _main-invisible">
@@ -78,8 +102,8 @@
             <div class="main__content-footer footer-block _main-invisible">
                <!-- блок с кнопками на удаление -->
                <div class="footer-block__items">
-                  <button type="button" class="footer-block__delete-complete btn-list">Удалить завершённые</button>
-                  <button type="button" class="footer-block__delete-all btn-list">Удалить всё</button>
+                  <button type="button" class="footer-block__delete-complete btn-list">Delete complete task</button>
+                  <button type="button" class="footer-block__delete-all btn-list">Delete all</button>
                </div>
             </div>
          </div>

@@ -29,91 +29,34 @@ buttonAddTask.addEventListener('click', () => {
 buttonAddTask.addEventListener('click', () => document.querySelector('.main__content-main').classList.remove('main-invisible'))//показывает блок с задачами footer
 
 //TODO ------ прослушивание событий на кнопках авторизации/регистрации ----------
-document.querySelector('.authorization__enter').addEventListener('click', () => { console.log('enter') })//вход
+//document.querySelector('.authorization__enter').addEventListener('click', () => { console.log('enter') })//вход
+
 document.querySelector('.authorization__reg').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))//регистрация
-//TODO---------окно регистрации---------------------
-//section registration
-//document.querySelector('.header__rigistr').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))
+
+//TODO---------окно login'а с кнопкой (выход)---------------------
+//document.querySelector('.header__exit').addEventListener('click', () => localStorage.removeItem('username'))
+document.querySelector('.header__exit').addEventListener('click', () => {
+   localStorage.clear(), //очистка localStorage
+      document.getElementById('log').value = '' //очистка поля с именем
+})
 //!!----------------------------------------------
 //document.querySelector('body').classList.toggle('lock')
 //   ('click', () => document.querySelector('.main__content-main').classList.toggle('lock'))
 
-//-------------------------------------------------
-
 
 //TODO ------ local storage. получение данных. запись ----------
-//for (let i = 0; i < localStorage.length; i++) {
-//   let key = localStorage.key(i);
-//   console.log(`${key}: ${localStorage.getItem(key)}`);
-//}
-//console.log(localStorage.getItem(data.id));
-
-//console.log(localStorage.getItem('dataUser'))
-
-
-
-//btn to back
+//btn to back(закрыть окно авторизации)
 document.querySelector('.registration__back').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))
+
+//btn to back (закрыть окно входа в аккаунт)
+document.querySelector('.sign-it__reg').addEventListener('click', () => document.querySelector('.sign-it').classList.toggle('sgn'))
 
 //TODO----------регистрация--------------------------
 //отправка формы с данными
 document.querySelector('.registration__sent').addEventListener('click', () => createUser())
 
-
-
-/*------функция для добавления класса active в checkbox----------*/
-//console.log(document.querySelector('.check__input'))
-//document.querySelector('.check__input').addEventListener('click', (event) => document.querySelector('.check__choice').classList.toggle('active')(event)) //обращение через DOM
-
-/*-----------------функция для отрисовки задач---------*/
-//export function showTask(idTask, nameTask, isDoneTask) {
-//   //блок для checkbox'ов
-//   let checkBoxContent = document.createElement('div')
-//   checkBoxContent.classList = 'check__box-content'
-
-//   let textP = document.createElement('label') //label для содержимого
-
-//   textP.setAttribute('for', "check__choice_" + idTask)//добавление ID к задаче
-//   textP.classList = "check__choice"
-//   items.append(textP) //добавлен в блок 'main__item-del'
-
-//   let checkbox = document.createElement('input') // checkbox для выбора задач
-//   checkbox.setAttribute('type', 'checkbox')
-//   checkbox.id = "check__choice_" + idTask
-//   checkbox.classList = "check__input"
-//   textP.append(checkbox) //добавлен в label
-
-//   textP.innerText = nameTask
-//   checkBoxContent.append(checkbox)
-
-//   let div = document.createElement('div') //блок для картинки 'X'
-//   div.classList = 'main__item-del'
-//   div.dataset.id = idTask // создали аттрибут(понимать, какую запись мы удаляем)
-//   div.textContent = '❌'
-//   items.append(checkBoxContent) //добавлен в блок 'main__item-del'
-//   checkBoxContent.append(textP)
-//   checkBoxContent.append(div)
-//   if (isDoneTask === 1) {//проверка на checked
-//      checkbox.checked = true
-//   }
-//   else {
-//      checkbox.checked = false
-//   }
-////оставить прослушки и вынести их чере документ.querySelector
-//div.addEventListener('click', (event) => delData(event.target)) //передали целый элемент (Х)
-
-///*------функция для добавления класса active в checkbox----------*/
-//const checkAddDel = () => textP.classList.toggle('active')
-//checkbox.addEventListener('click', (event) => checkAddDel(event))
-
-
-///*------функция для добавления класса active в checkbox----------*/
-//checkbox.addEventListener('click', (event) => textP.classList.toggle('active')(event))
-
-//   ///*------- удалениe завершенных задач---------*/
-//   btnDelTaskComplete.addEventListener('click', sortOut)
-//}
-
+//TODO----------вход в аккаунт--------------------------
+document.querySelector('.authorization__enter').addEventListener('click', () => document.querySelector('.sign-it').classList.toggle('sgn')) //регистрация
 
 
 

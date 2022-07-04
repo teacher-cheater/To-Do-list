@@ -98,25 +98,5 @@
    color: #000;
    background: #fff;
    border: 1px solid #000;
-   transition: all 0.3s ease 0.1s;
-}
-/*----общие стили для button-------*/
-.btn-list{
-   font-weight: 600;
-   font-size: 16px;
-   line-height: 1.18;
-   text-align: center;
-   color: #FFFFFF;
-   border-radius: 4px;
-   padding: 10px 16px;
-   cursor: pointer;
-   border: 1px solid #000;
-}
-/*---------общие стили для input--------*/
-.input-stl{
-   padding: 9px 32px 8px 14px;
-   background: #FFFFFF;
-   border: 1px solid #CED4DA;
-   border-radius: 4px;
-   color: #54595E;
+   transition: all 0.2s ease 0.1s;
 }

@@ -83,5 +83,20 @@ export function createUser() {
          console.log(
             formData.get("username")//вывод данных о пользователе
          );
+         document.getElementById('log').textContent = formData.get("username")
       })
+      .then(() => document.querySelector('.authorization').style = "display: none")//скрытие pop-up авторизации
+      .then(() => document.querySelector('.registration').style = "display: none")//скрытие pop-up регистрации
 }
+
+//TODO----------функция для отправки формы регистрации---------------------
+//export function enterAk() {
+//   fetch('http://24api.ru/rest-user/', {
+//      method: 'GET',
+//      mode: 'cors',
+//      headers: {
+//         'Content-Type': 'application/json'
+//      },
+//      body: JSON.stringify(formData)
+//   })
+//}

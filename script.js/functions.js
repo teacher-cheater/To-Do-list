@@ -1,5 +1,5 @@
 import { postDelId } from './fetch-files.js';
-import { buttonAddTask, btnDeleteAllTask } from './variables.js';
+//import { buttonAddTask, btnDeleteAllTask } from './variables.js';
 
 
 //TODO/*--------------функция для удаления task'ов-------------------------------*/

@@ -33,3 +33,6 @@
 .authorization__enter, .authorization__reg{
    background-color: #000;
 }
+.author{
+   display: none;
+}

@@ -1,6 +1,6 @@
 //импорт переменных const
 import { buttonAddTask, btnDeleteAllTask } from './variables.js';
-import { addTask, delAllTasks, getData, createUser } from './fetch-files.js'
+import { addTask, delAllTasks, getData, enterAk } from './fetch-files.js'
 
 /*-------------------------------------*/
 
@@ -31,10 +31,14 @@ buttonAddTask.addEventListener('click', () => document.querySelector('.main__con
 //TODO ------ прослушивание событий на кнопках авторизации/регистрации ----------
 //document.querySelector('.authorization__enter').addEventListener('click', () => { console.log('enter') })//вход
 
-document.querySelector('.authorization__reg').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))//регистрация
+//document.querySelector('.authorization__reg').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))//регистрация
+
+//document.querySelector('.header__rigistr').addEventListener('click', () => { console.log('111') })
+document.querySelector('.header__rigistr').addEventListener('click', () => document.querySelector('.registration').classList.remove('reg-on-off'))//регистрация
 
 //TODO---------окно login'а с кнопкой (выход)---------------------
 //document.querySelector('.header__exit').addEventListener('click', () => localStorage.removeItem('username'))
+
 document.querySelector('.header__exit').addEventListener('click', () => {
    localStorage.clear(), //очистка localStorage
       document.getElementById('log').value = '' //очистка поля с именем
@@ -49,15 +53,21 @@ document.querySelector('.header__exit').addEventListener('click', () => {
 document.querySelector('.registration__back').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))
 
 //btn to back (закрыть окно входа в аккаунт)
-document.querySelector('.sign-it__reg').addEventListener('click', () => document.querySelector('.sign-it').classList.toggle('sgn'))
+//document.querySelector('.sign-it__reg').addEventListener('click', () => document.querySelector('.sign-it').classList.toggle('sgn'))//кнопка из авторизации,чтобы зарегистррировать
+
+//document.querySelector('.header__registr').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))
 
 //TODO----------регистрация--------------------------
 //отправка формы с данными
-document.querySelector('.registration__sent').addEventListener('click', () => createUser())
+//document.querySelector('.registration__sent').addEventListener('click', () => createUser())
+document.querySelector('.registration__sent').addEventListener('click', enterAk)
+
+enterAk
 
 //TODO----------вход в аккаунт--------------------------
 document.querySelector('.authorization__enter').addEventListener('click', () => document.querySelector('.sign-it').classList.toggle('sgn')) //регистрация
 
+document.querySelector('.sign-it__enter').addEventListener('click', () => { console.log('fff') })//вход зарегистрированного пользователя
 
 
 

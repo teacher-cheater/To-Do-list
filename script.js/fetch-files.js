@@ -2,7 +2,6 @@
 import { showTask } from './draw-task.js'
 
 //TODO/*-----------функция для получения пользователя-----------------------------*/
-
 export function getData() {
    return fetch('http://24api.ru/rest-todo/items-by-id?id=' + localStorage.getItem('dataUser'), {
       method: 'GET',
@@ -66,18 +65,44 @@ export function delAllTasks() {
 }
 
 //TODO----------функция для отправки формы регистрации--------------------------
-export function createUser() {
+//export function createUser() {
+//   let oldForm = document.forms.dataUser;
+//   let formData = new FormData(oldForm);
+//   fetch('http://24api.ru/rest-user', {
+//      method: 'POST',
+//      mode: 'cors',
+//      body: formData
+//   })
+//      .then((answerTask) => answerTask.json())
+//      .then((data) => {
+//         localStorage.setItem('dataUser', data.id);
+//         console.log(
+//            formData.get("username")//вывод данных о пользователе
+//         );
+//         document.getElementById('log').textContent = formData.get("username")
+//      })
+//      .then(() => document.querySelector('.authorization').style = "display: none")//скрытие pop-up авторизации
+//      .then(() => document.querySelector('.registration').style = "display: none")//скрытие pop-up регистрации
+//}
+
+//TODO----------функция для проверки пользователя и регистрации ---------------------
+export function enterAk() {
    let oldForm = document.forms.dataUser;
    let formData = new FormData(oldForm);
+   if (!localStorage.getItem('dataUser')) {
+      console.log('Error')
+   }
    fetch('http://24api.ru/rest-user', {
       method: 'POST',
       mode: 'cors',
-      headers: {
-         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
+      body: formData
    })
-      .then((answerTask) => answerTask.json())
+      .then((answerTask) => {
+         if (answerTask.status === 500) {
+            alert('Пользователь с таким именем существует!')
+         }
+         return answerTask.json()
+      })
       .then((data) => {
          localStorage.setItem('dataUser', data.id);
          console.log(
@@ -87,16 +112,5 @@ export function createUser() {
       })
       .then(() => document.querySelector('.authorization').style = "display: none")//скрытие pop-up авторизации
       .then(() => document.querySelector('.registration').style = "display: none")//скрытие pop-up регистрации
+   //.then(() => document.querySelector('.sign-it').style = "display: none")//скрытие pop-up окна входа
 }
-
-//TODO----------функция для отправки формы регистрации---------------------
-//export function enterAk() {
-//   fetch('http://24api.ru/rest-user/', {
-//      method: 'GET',
-//      mode: 'cors',
-//      headers: {
-//         'Content-Type': 'application/json'
-//      },
-//      body: JSON.stringify(formData)
-//   })
-//}

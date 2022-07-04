@@ -18,22 +18,25 @@
 
 /* icon для регистрации */
 /* ??? */
-.header__exit {
+.header__exit,.header__rigistr {
    border-radius: 50%;
-   padding: 18px;
+   padding: 15px;
+   background-color: #fff;
    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-   background: url('../img/registration.svg') 50% 50% / 70%  no-repeat #fff;
    transition: all 0.1s ease 0s;
+   cursor: pointer;
 }
-.header__exit:hover{
-   padding: 18px;
-   background: url('../img/exit2.svg') 60% 50% / 55%  no-repeat #fff;
+.header__exit{
+   background: url('../img/exit.svg') 50% 50% / cover  no-repeat #fff;
+}
+.header__rigistr{
+   background: url('../img/registration.svg') 50% 50% / 85%  no-repeat #fff;
 }
 
 .header__account {
    position: absolute;
    display: flex;
-   gap: 18px;
+   gap: 10px;
    align-items: center;
    right: 5%;
    top: 13%;
@@ -43,6 +46,9 @@
    padding: 12px;
    /*background-color: #fff;*/
    /*box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);*/
+}
+.header__account p {
+   margin-right: 18px;
 }
 /*.header__account img:hover {
    background:

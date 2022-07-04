@@ -22,15 +22,15 @@
       <div class="header__container">
          <h1 class="header__title">ToDo List</h1>
          <!-- блок с Login'ом и кнопкой 'выход' -->
-         <div class="header__account">
+         <form class="header__account">
             <p id="log" class="header__login"> Name </p>
-            <a href="#" class="header__exit"></a>
-            <!--<a href="#" class="header__rigistr"><img src="img/registration.svg" alt="icon registration"></a>-->
-         </div>
+            <button type="button" href="" class="header__rigistr"></button>
+            <button type="button" href="" class="header__exit"></button>
+         </form>
       </div>
    </header>
    <!--------------- окно авторизации ------------------>
-   <section class="authorization">
+   <section class="authorization author">
       <div class="authorization__wrapper pop-up">
          <h2 class="authorization__title title"> Authorization</h2>
          <p class="authorization__text"> Do you have an account?</p>
@@ -41,7 +41,7 @@
       </div>
    </section>
    <!--------------- окно входа в аккаунт ------------------>
-   <section  class="sign-it sgn">
+   <section class="sign-it sgn">
       <div class="sign-it__wrapper pop-up">
          <h2 class="sign-it__title title"> Enter your details</h2>
          <form action="#" name="sign-it" class="sign-it__block">
@@ -90,7 +90,7 @@
             <div class="main__content-header header-block">
                <!-- блок: ввести задачу, добавить задачу -->
                <div class="header-block__items">
-                  <input id="inpt-main" name="input-name" placeholder="Введите задачу" class="header-block__inpt input-stl" type="text">
+                  <input id="inpt-main" name="input-name" placeholder="Enter a task" class="header-block__inpt input-stl" type="text">
                   <button type="button" class="header-block__btn btn-list">Add task</button>
                </div>
             </div>

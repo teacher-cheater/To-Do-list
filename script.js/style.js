@@ -4,7 +4,7 @@ import { addTask, delAllTasks, getData, enterAk } from './fetch-files.js'
 
 /*-------------------------------------*/
 
-/*---------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
 getData()
 //createUser()
 
@@ -47,7 +47,6 @@ document.querySelector('.header__exit').addEventListener('click', () => {
 //document.querySelector('body').classList.toggle('lock')
 //   ('click', () => document.querySelector('.main__content-main').classList.toggle('lock'))
 
-
 //TODO ------ local storage. получение данных. запись ----------
 //btn to back(закрыть окно авторизации)
 document.querySelector('.registration__back').addEventListener('click', () => document.querySelector('.registration').classList.toggle('reg-on-off'))
@@ -61,8 +60,6 @@ document.querySelector('.registration__back').addEventListener('click', () => do
 //отправка формы с данными
 //document.querySelector('.registration__sent').addEventListener('click', () => createUser())
 document.querySelector('.registration__sent').addEventListener('click', enterAk)
-
-enterAk
 
 //TODO----------вход в аккаунт--------------------------
 document.querySelector('.authorization__enter').addEventListener('click', () => document.querySelector('.sign-it').classList.toggle('sgn')) //регистрация

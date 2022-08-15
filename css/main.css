@@ -1,5 +1,7 @@
 .main {
    padding: 20px 0 30px;
+   max-width: 600px;
+   margin: 0 auto;
 }
 
 .main__container {
@@ -9,7 +11,7 @@
 }
 
 .header-block {
-   border-bottom: 1px solid #CED4DA;
+   border-bottom: 1px solid #ced4da;
 }
 
 .header-block__items {
@@ -28,12 +30,12 @@
    background: #272829;
    padding: 8px 16px;
 }
-.header-block__btn:hover{
+.header-block__btn:hover {
    background: #000000;
 }
 
 /* стили для параграфа (р) */
-.check__choice{
+.check__choice {
    overflow: hidden;
    padding: 0 25px 0 0;
    cursor: pointer;
@@ -45,7 +47,7 @@
 }
 
 /* container with label and div */
-.check__box-content{
+.check__box-content {
    position: relative;
    display: flex;
    gap: 14px;
@@ -54,19 +56,19 @@
 /* ----- */
 
 /*Checked*/
-.active{
+.active {
    text-decoration-line: line-through;
-   color: #54595E;
+   color: #54595e;
    opacity: 0.5;
 }
 /* блоки, которые отображаются */
-.main-invisible{
+.main-invisible {
    display: none;
 }
 .main__content-footer {
-   background: #F5F5F5;
+   background: #f5f5f5;
    padding: 18px 24px;
-   border-radius:  0 0 16px 16px;
+   border-radius: 0 0 16px 16px;
    /*display: none;*/
 }
 .main__content-main {
@@ -88,13 +90,13 @@
    justify-content: space-between;
 }
 .footer-block__delete-complete,
-.footer-block__delete-all{
+.footer-block__delete-all {
    background: #000000;
 }
 
 /* стили при наведении на кнопку */
 .footer-block__delete-all:hover,
-.footer-block__delete-complete:hover{
+.footer-block__delete-complete:hover {
    color: #000;
    background: #fff;
    border: 1px solid #000;

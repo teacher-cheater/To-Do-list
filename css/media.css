@@ -1,5 +1,21 @@
-@media (max-width: 539.98px) {
+@media (max-width: 517.98px) {
+   .input-stl,
+   .header-block__btn {
+      width: 100%;
+   }
+}
+
+@media (max-width: 389.98px) {
    .header-block__items {
-      /*padding: 18px;*/
+      flex-wrap: wrap;
+   }
+
+   .footer-block__items {
+      flex-wrap: wrap;
+      gap: 10px;
+   }
+
+   .btn-list {
+      width: 100%;
    }
 }

@@ -1,11 +1,11 @@
 .authorization {
    position: relative;
-   width:100%;
-   min-height:100%;
-   background-color: rgba(0,0,0,0.5);
-   overflow:hidden;
-   position:fixed;
-   top:0px;
+   width: 100%;
+   min-height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   overflow: hidden;
+   position: fixed;
+   top: 0px;
    z-index: 2;
 }
 .authorization__wrapper {
@@ -16,23 +16,20 @@
    margin: 0 auto;
    border: 1px solid #000;
 }
-.authorization__title {
-}
-.title {
-}
-.authorization__text{
+
+.authorization__text {
    font-size: 18px;
    margin-bottom: 40px;
    text-align: center;
    line-height: 1.4;
-
 }
 .authorization__block {
    text-align: center;
 }
-.authorization__enter, .authorization__reg{
+.authorization__enter,
+.authorization__reg {
    background-color: #000;
 }
-.author{
+.author {
    display: none;
 }

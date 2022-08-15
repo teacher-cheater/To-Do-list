@@ -1,6 +1,5 @@
-
 /* ---общий стиль для pop-up'ов---- */
-.pop-up{
+.pop-up {
    background-color: #fff;
    position: absolute;
    top: 30px;
@@ -8,7 +7,6 @@
    transform: translate(-50%);
    overflow: auto;
    border-radius: 10px;
-   /*transition: all 0.8s ease 0s;*/
 }
 
 /* ----общий стиль для всех тайтлов h2 ----*/
@@ -24,12 +22,12 @@
 }
 
 /*----общие стили для button-------*/
-.btn-list{
+.btn-list {
    font-weight: 600;
    font-size: 16px;
    line-height: 1.18;
    text-align: center;
-   color: #FFFFFF;
+   color: #ffffff;
    border-radius: 4px;
    padding: 10px 16px;
    cursor: pointer;
@@ -37,10 +35,10 @@
 }
 
 /*---------общие стили для input--------*/
-.input-stl{
+.input-stl {
    padding: 9px 32px 8px 14px;
-   background: #FFFFFF;
-   border: 1px solid #CED4DA;
+   background: #ffffff;
+   border: 1px solid #ced4da;
    border-radius: 4px;
-   color: #54595E;
+   color: #54595e;
 }

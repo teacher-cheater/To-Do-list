@@ -1,18 +1,18 @@
-
 /* оформление pop-up */
 .registration {
    position: relative;
-   width:100%;
-   min-height:100%;
-   background-color: rgba(0,0,0,0.5);
-   overflow:hidden;
-   position:fixed;
-   top:0px;
+   width: 100%;
+   min-height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   overflow: hidden;
+   position: fixed;
+   top: 0px;
    z-index: 2;
 }
 
 /* ------------------------------ */
-.reg-on-off { /* скрыть окно авторизации */
+.reg-on-off {
+   /* скрыть окно авторизации */
    display: none;
 }
 /* ------------------ */
@@ -25,7 +25,6 @@
    border: 1px solid #000;
 }
 
-
 .registration__block {
    text-align: center;
    gap: 18px;
@@ -33,32 +32,17 @@
    flex-direction: column;
    margin-bottom: 35px;
 }
-.reg {
-}
-.reg__username {
 
-}
 .reg__inpt {
    padding: 12px 25px;
    width: 100%;
 }
-.input-stl {
-}
-.reg__email {
-}
-.reg__fname {
-}
-.reg__sname {
-}
-.reg__patronymic {
-}
+
 .registration__btn {
    display: flex;
    justify-content: space-between;
 }
-.registration__sent,.registration__back {
+.registration__sent,
+.registration__back {
    background-color: #000000;
 }
-.btn-list {
-}
-

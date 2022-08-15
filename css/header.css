@@ -1,9 +1,6 @@
-.header {
-}
 .header__container {
    position: relative;
-   background: #D4D3D8;
-   
+   background: #d4d3d8;
 }
 .header__title {
    padding: 100px 0 20px 0;
@@ -12,13 +9,13 @@
    font-size: 58px;
    line-height: 0.82;
    color: #000000;
-   /*text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
    text-align: center;
 }
 
 /* icon для регистрации */
-/* ??? */
-.header__exit,.header__rigistr {
+
+.header__exit,
+.header__rigistr {
    border-radius: 50%;
    padding: 15px;
    background-color: #fff;
@@ -26,11 +23,11 @@
    transition: all 0.1s ease 0s;
    cursor: pointer;
 }
-.header__exit{
-   background: url('../img/exit.svg') 50% 50% / cover  no-repeat #fff;
+.header__exit {
+   background: url("../img/exit.svg") 50% 50% / cover no-repeat #fff;
 }
-.header__rigistr{
-   background: url('../img/registration.svg') 50% 50% / 85%  no-repeat #fff;
+.header__rigistr {
+   background: url("../img/registration.svg") 50% 50% / 85% no-repeat #fff;
 }
 
 .header__account {
@@ -44,25 +41,7 @@
    font-weight: 500;
    border-radius: 5px;
    padding: 12px;
-   /*background-color: #fff;*/
-   /*box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);*/
 }
 .header__account p {
    margin-right: 18px;
 }
-/*.header__account img:hover {
-   background:
-}*/
-/* имя пользователя */
-/*.header__login{
-   position: absolute;
-   right: 14%;
-   top: 15%;
-   font-size: 24px;
-   font-weight: 600;
-   text-transform: capitalize;
-   padding: 8px 12px;
-   border-radius: 5px;
-   background-color: #fff;
-   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-}*/

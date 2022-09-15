@@ -2,25 +2,21 @@
 import { showTask } from './draw-task.js'
 
 //TODO/*-----------функция для получения пользователя-----------------------------*/
-export function getData() {
-   return fetch('http://24api.ru/rest-todo/items-by-id?id=' + localStorage.getItem('dataUser'), {
+export async function getData() {
+   const resp = await fetch(`http://24api.ru/rest-todo/items-by-id?id=null${localStorage.getItem('dataUser')}`, {
       method: 'GET',
    })
-      .then((resp) => {
-         return resp.json()
-      })
-      .then((data) => {
-         let out = ''
-         for (let k in data) {
-            out = data[k]
-            showTask(out.id, out.name, out.isDone) //вывод задачи на экран(func)
-         }
-      })
+   const data = await resp.json()
+   let out = ''
+   for (let k in data) {
+      out = data[k]
+      showTask(out.id, out.name, out.isDone) //вывод задачи на экран(func)
+   }
 }
 
 //TODO/*---------------функция для добавления задач---------------------------*/
 export function addTask() {
-   let val = document.getElementById('inpt-main').value// получили input ввода задач 
+   const val = document.getElementById('inpt-main').value// получили input ввода задач 
    const dataTask = {
       "name": val,
       "isDone": 0,
@@ -54,7 +50,7 @@ export function postDelId(arr) {
 
 //TODO/*----------------функция "удалить всё"----------------------------*/
 export function delAllTasks() {
-   let tasksDiv = document.querySelectorAll('.main__item-del')
+   const tasksDiv = document.querySelectorAll('.main__item-del')
    for (let k of tasksDiv) {
       fetch('http://24api.ru/rest-todo/' + [k][0].attributes[1].nodeValue, {
          method: 'DELETE',
@@ -87,8 +83,8 @@ export function delAllTasks() {
 
 //TODO----------функция для проверки пользователя и регистрации ---------------------
 export function enterAk() {
-   let oldForm = document.forms.dataUser;
-   let formData = new FormData(oldForm);
+   const oldForm = document.forms.dataUser;
+   const formData = new FormData(oldForm);
    if (!localStorage.getItem('dataUser')) {
       console.log('Error')
    }

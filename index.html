@@ -1,113 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="./css/header.css">
-   <link rel="stylesheet" href="./css/main.css">
-   <link rel="stylesheet" href="./css/null.css">
-   <link rel="stylesheet" href="./css/normalize.css">
-   <link rel="stylesheet" href="./css/registration.css">
-   <link rel="stylesheet" href="./css/authorization.css">
-   <link rel="stylesheet" href="./css/media.css">
-   <link rel="stylesheet" href="./css/sign.css">
-   <link rel="stylesheet" href="./css/popup.css">
-   <link rel="stylesheet" href="./css/style.css">
-   <title>ToDo list</title>
-</head>
-<body>
-   <header class="header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/registration.css" />
+    <link rel="stylesheet" href="./css/authorization.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+    <link rel="stylesheet" href="./css/sign.css" />
+    <link rel="stylesheet" href="./css/popup.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>ToDo list</title>
+  </head>
+  <body>
+    <header class="header">
       <div class="header__container">
-         <h1 class="header__title">ToDo List</h1>
-         <!-- блок с Login'ом и кнопкой 'выход' -->
-         <form class="header__account">
-            <p id="log" class="header__login"> Name </p>
-            <button type="button" href="" class="header__rigistr"></button>
-            <button type="button" href="" class="header__exit"></button>
-         </form>
+        <h1 class="header__title">ToDo List</h1>
+        <!-- блок с Login'ом и кнопкой 'выход' -->
+        <form class="header__account">
+          <p id="log" class="header__login">Name</p>
+          <button type="button" href="" class="header__rigistr"></button>
+          <button type="button" href="" class="header__exit"></button>
+        </form>
       </div>
-   </header>
-   <!--------------- окно авторизации ------------------>
-   <section class="authorization author">
+    </header>
+    <!--------------- окно авторизации ------------------>
+    <section class="authorization author">
       <div class="authorization__wrapper pop-up">
-         <h2 class="authorization__title title"> Authorization</h2>
-         <p class="authorization__text"> Do you have an account?</p>
-         <form action="#" name="authorization" class="authorization__block">
-            <a href="#" class="authorization__enter btn-list">Sign it</a>
-            <a href="#" class="authorization__reg btn-list">Sign up</a>
-         </form>
+        <h2 class="authorization__title title">Authorization</h2>
+        <p class="authorization__text">Do you have an account?</p>
+        <form action="#" name="authorization" class="authorization__block">
+          <a href="#" class="authorization__enter btn-list">Sign it</a>
+          <a href="#" class="authorization__reg btn-list">Sign up</a>
+        </form>
       </div>
-   </section>
-   <!--------------- окно входа в аккаунт ------------------>
-   <section class="sign-it sgn">
+    </section>
+    <!--------------- окно входа в аккаунт ------------------>
+    <section class="sign-it sgn">
       <div class="sign-it__wrapper pop-up">
-         <h2 class="sign-it__title title"> Enter your details</h2>
-         <form action="#" name="sign-it" class="sign-it__block">
-            <!--<a href="#" class="sign-it__enter btn-list">Sign it</a>
+        <h2 class="sign-it__title title">Enter your details</h2>
+        <form action="#" name="sign-it" class="sign-it__block">
+          <!--<a href="#" class="sign-it__enter btn-list">Sign it</a>
             <a href="#" class="sign-it__reg btn-list">Sign up</a>-->
-            <input class="sign-it__log" placeholder="Login" id="login" type="text" name="login">
-            <input class="sign-it__pas" placeholder="Password" id="pswrd" type="password" name="password">
-         </form>
-         <div class="sign-it__items">
-            <a href="#" class="sign-it__enter btn-list">Sign</a>
-            <a href="#" class="sign-it__reg btn-list">Back</a>
-         </div>
+          <input
+            class="sign-it__log"
+            placeholder="Login"
+            id="login"
+            type="text"
+            name="login"
+          />
+          <input
+            class="sign-it__pas"
+            placeholder="Password"
+            id="pswrd"
+            type="password"
+            name="password"
+          />
+        </form>
+        <div class="sign-it__items">
+          <a href="#" class="sign-it__enter btn-list">Sign</a>
+          <a href="#" class="sign-it__reg btn-list">Back</a>
+        </div>
       </div>
-   </section>
-   <!--------------- окно регистрации ------------------>
-   <section class="registration reg-on-off ">
+    </section>
+    <!--------------- окно регистрации ------------------>
+    <section class="registration reg-on-off">
       <div class="registration__wrapper pop-up">
-         <h2 class="registration__title title">Registration</h2>
-         <form action="#" name="dataUser" class="registration__block reg">
-            <div class="reg__username">
-               <input required name="username" placeholder="Username" class="reg__inpt input-stl" type="text">
-            </div>
-            <div class="reg__email">
-               <input required name="email" placeholder="Email" class="reg__inpt input-stl" type="text">
-            </div>
-            <div class="reg__fname">
-               <input required name="fname" placeholder="Fname" class="reg__inpt input-stl" type="text">
-            </div>
-            <div class="reg__sname">
-               <input required name="sname" placeholder="Surname" class="reg__inpt input-stl" type="text">
-            </div>
-            <div class="reg__password">
-               <input required name="password_hash" placeholder="Password" class="reg__inpt input-stl" type="password">
-            </div>
-         </form>
-         <div class="registration__btn">
-            <button type="button" class="registration__sent btn-list">Send</button>
-            <a class="registration__back btn-list">Back</a>
-         </div>
+        <h2 class="registration__title title">Registration</h2>
+        <form action="#" name="dataUser" class="registration__block reg">
+          <div class="reg__username">
+            <input
+              required
+              name="username"
+              placeholder="Username"
+              class="reg__inpt input-stl"
+              type="text"
+            />
+          </div>
+          <div class="reg__email">
+            <input
+              required
+              name="email"
+              placeholder="Email"
+              class="reg__inpt input-stl"
+              type="text"
+            />
+          </div>
+          <div class="reg__fname">
+            <input
+              required
+              name="fname"
+              placeholder="Fname"
+              class="reg__inpt input-stl"
+              type="text"
+            />
+          </div>
+          <div class="reg__sname">
+            <input
+              required
+              name="sname"
+              placeholder="Surname"
+              class="reg__inpt input-stl"
+              type="text"
+            />
+          </div>
+          <div class="reg__password">
+            <input
+              required
+              name="password_hash"
+              placeholder="Password"
+              class="reg__inpt input-stl"
+              type="password"
+            />
+          </div>
+        </form>
+        <div class="registration__btn">
+          <button type="button" class="registration__sent btn-list">
+            Send
+          </button>
+          <a class="registration__back btn-list">Back</a>
+        </div>
       </div>
-   </section>
-   <!-------------------------------------------------->
-   <main class="main">
+    </section>
+    <!-------------------------------------------------->
+    <main class="main">
       <div class="main__container">
-         <div class="main__block">
-            <div class="main__content-header header-block">
-               <!-- блок: ввести задачу, добавить задачу -->
-               <div class="header-block__items">
-                  <input id="inpt-main" name="input-name" placeholder="Enter a task" class="header-block__inpt input-stl" type="text">
-                  <button type="button" class="header-block__btn btn-list">Add task</button>
-               </div>
+        <div class="main__block">
+          <div class="main__content-header header-block">
+            <!-- блок: ввести задачу, добавить задачу -->
+            <div class="header-block__items">
+              <input
+                id="inpt-main"
+                name="input-name"
+                placeholder="Enter a task"
+                class="header-block__inpt input-stl"
+                type="text"
+              />
+              <button type="button" class="header-block__btn btn-list">
+                Add task
+              </button>
             </div>
-            <div class="main__content-main _main-invisible">
-               <div class="main__items check">
-                  <!-- отрисовка контента задач через JS -->
-               </div>
+          </div>
+          <div class="main__content-main _main-invisible">
+            <div class="main__items check">
+              <!-- отрисовка контента задач через JS -->
             </div>
-            <div class="main__content-footer footer-block _main-invisible">
-               <!-- блок с кнопками на удаление -->
-               <div class="footer-block__items">
-                  <button type="button" class="footer-block__delete-complete btn-list">Delete complete task</button>
-                  <button type="button" class="footer-block__delete-all btn-list">Delete all</button>
-               </div>
+          </div>
+          <div class="main__content-footer footer-block _main-invisible">
+            <!-- блок с кнопками на удаление -->
+            <div class="footer-block__items">
+              <button
+                type="button"
+                class="footer-block__delete-complete btn-list"
+              >
+                Delete complete task
+              </button>
+              <button type="button" class="footer-block__delete-all btn-list">
+                Delete all
+              </button>
             </div>
-         </div>
+          </div>
+        </div>
       </div>
-   </main>
-   <script type="module" src="./script.js/style.js"></script>
-</body>
+    </main>
+    <script type="module" src="./script.js/style.js"></script>
+  </body>
 </html>

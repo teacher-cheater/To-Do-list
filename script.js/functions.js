@@ -4,8 +4,8 @@ import { postDelId } from './fetch-files.js';
 
 //TODO/*--------------функция для удаления task'ов-------------------------------*/
 export function delData(targets) {
-   let id = targets.attributes[1].nodeValue //получили ID-шник, который хранится в записи.
-   fetch('http://24api.ru/rest-todo/' + id, {
+   const id = targets.attributes[1].nodeValue //получили ID-шник, который хранится в записи.
+   fetch(`http://24api.ru/rest-todo/${id}`, {
       method: 'DELETE',
    }).then(() => {
       targets.parentElement.remove() // удаляем div 
@@ -14,12 +14,12 @@ export function delData(targets) {
 
 //TODO/*------------функция для обращения к ID элементам---------------------*/
 export function sortOut() {
-   let elements = document.querySelectorAll('.check__box-content')
-   let array = []
+   const elements = document.querySelectorAll('.check__box-content')
+   const array = []
    for (let k of elements) {
       if (k.childNodes[0].checked == true) {
-         let sort = k.childNodes[2]
-         let sortSplit = sort.dataset.id
+         const sort = k.childNodes[2]
+         const sortSplit = sort.dataset.id
          array.push(sortSplit)
       }
    }

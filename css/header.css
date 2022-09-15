@@ -2,6 +2,7 @@
    position: relative;
    background: #d4d3d8;
 }
+
 .header__title {
    padding: 100px 0 20px 0;
    font-style: normal;
@@ -23,9 +24,11 @@
    transition: all 0.1s ease 0s;
    cursor: pointer;
 }
+
 .header__exit {
    background: url("../img/exit.svg") 50% 50% / cover no-repeat #fff;
 }
+
 .header__rigistr {
    background: url("../img/registration.svg") 50% 50% / 85% no-repeat #fff;
 }
@@ -42,6 +45,7 @@
    border-radius: 5px;
    padding: 12px;
 }
+
 .header__account p {
    margin-right: 18px;
 }

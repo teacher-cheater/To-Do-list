@@ -1,14 +1,15 @@
 /* -------стили для pop-up------ */
 .sign-it {
    position: relative;
-   width:100%;
-   min-height:100%;
-   background-color: rgba(0,0,0,0.5);
-   overflow:hidden;
-   position:fixed;
-   top:0px;
+   width: 100%;
+   min-height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   overflow: hidden;
+   position: fixed;
+   top: 0px;
    z-index: 2;
 }
+
 .sign-it__wrapper {
    padding: 50px 30px;
    display: flex;
@@ -22,6 +23,7 @@
 .sign-it__title {
    text-align: center;
 }
+
 .sign-it__block {
    display: flex;
    flex-direction: column;
@@ -29,24 +31,28 @@
    gap: 20px;
    width: 100%;
 }
-.sign-it__log,.sign-it__pas{
+
+.sign-it__log,
+.sign-it__pas {
    padding: 10px;
    background-color: #f5f5f5;
    border-radius: 5px;
 }
 
-.sign-it__items{
+.sign-it__items {
    display: flex;
    justify-content: space-around;
 }
-.sign-it__enter,.sign-it__reg {
+
+.sign-it__enter,
+.sign-it__reg {
    background-color: #000;
    padding: 10px 30px;
 }
 
 /* кнопки при наведении */
-.sign-it__enter:hover, 
-.sign-it__reg:hover{
+.sign-it__enter:hover,
+.sign-it__reg:hover {
    color: #000;
    background: #fff;
    border: 1px solid #000;
@@ -54,6 +60,6 @@
 }
 
 /* класс скрытия секции */
-.sgn{
+.sgn {
    display: none;
 }

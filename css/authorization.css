@@ -8,6 +8,7 @@
    top: 0px;
    z-index: 2;
 }
+
 .authorization__wrapper {
    padding: 70px 30px;
    display: flex;
@@ -26,10 +27,12 @@
 .authorization__block {
    text-align: center;
 }
+
 .authorization__enter,
 .authorization__reg {
    background-color: #000;
 }
+
 .author {
    display: none;
 }

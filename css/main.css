@@ -30,6 +30,7 @@
    background: #272829;
    padding: 8px 16px;
 }
+
 .header-block__btn:hover {
    background: #000000;
 }
@@ -42,6 +43,7 @@
    line-height: 1.4;
 }
 /* ----------------- */
+
 .check__input {
    cursor: pointer;
 }
@@ -61,16 +63,19 @@
    color: #54595e;
    opacity: 0.5;
 }
+
 /* блоки, которые отображаются */
 .main-invisible {
    display: none;
 }
+
 .main__content-footer {
    background: #f5f5f5;
    padding: 18px 24px;
    border-radius: 0 0 16px 16px;
    /*display: none;*/
 }
+
 .main__content-main {
    padding: 18px 24px;
 }
@@ -89,6 +94,7 @@
    display: flex;
    justify-content: space-between;
 }
+
 .footer-block__delete-complete,
 .footer-block__delete-all {
    background: #000000;
